@@ -99,6 +99,7 @@ class Signin extends Addons
             'actionname'     => $actionname,
             'controllername' => $controllername
         ];
+        print_r($data);
         return $this->fetch('view/hook/user_sidenav_after', $data);
     }
 
