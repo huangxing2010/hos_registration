@@ -5,3 +5,5 @@ composer.lock
 *.log
 !.gitkeep
 node_modules
+/README_MD/*
+.zip
