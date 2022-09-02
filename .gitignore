@@ -4,3 +4,4 @@ composer.lock
 *.log
 !.gitkeep
 node_modules
+/idea
