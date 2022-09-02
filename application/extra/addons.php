@@ -2,7 +2,11 @@
 
 return [
     'autoload' => false,
-    'hooks' => [],
+    'hooks' => [
+        'user_sidenav_after' => [
+            'signin',
+        ],
+    ],
     'route' => [],
     'priority' => [],
     'domain' => '',
