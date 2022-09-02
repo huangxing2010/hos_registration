@@ -1,5 +1,4 @@
 /runtime/*
-/README_MD/*
 .idea
 composer.lock
 *.log
