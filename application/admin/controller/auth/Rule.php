@@ -60,7 +60,6 @@ class Rule extends Backend
             $list = $this->rulelist;
             $total = count($this->rulelist);
             $result = array("total" => $total, "rows" => $list);
-
             return json($result);
         }
         return $this->view->fetch();

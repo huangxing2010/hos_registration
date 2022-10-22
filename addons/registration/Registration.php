@@ -63,6 +63,18 @@ class Registration extends Addons
                         ]
                     ],
                     [
+                        "name"    => "registration/number",
+                        "title"   => "号源管理",
+                        'icon'    => 'fa fa-graduation-cap',
+                        'sublist' => [
+                            ["name" => "registration/number/index", "title" => "查看",],
+                            ["name" => "registration/number/add", "title" => "添加"],
+                            ["name" => "registration/number/edit", "title" => "编辑"],
+                            ["name" => "registration/number/del", "title" => "删除"],
+                            ["name" => "registration/number/multi", "title" => "批量更新"],
+                        ]
+                    ],
+                    [
                         "name"    => "registration/sick",
                         "title"   => "患者管理",
                         'icon'    => 'fa fa-graduation-cap',
@@ -87,20 +99,51 @@ class Registration extends Addons
                         ]
                     ],
                     [
-                        "name"    => "registration/info",
-                        "title"   => "挂号跟踪",
+                        "name"    => "registration/order",
+                        "title"   => "挂号管理",
                         'icon'    => 'fa fa-graduation-cap',
                         'sublist' => [
-                            ["name" => "registration/info/index", "title" => "查看",],
-                            ["name" => "registration/info/add", "title" => "添加"],
-                            ["name" => "registration/info/edit", "title" => "编辑"],
-                            ["name" => "registration/info/del", "title" => "删除"],
-                            ["name" => "registration/info/multi", "title" => "批量更新"],
+                            ["name" => "registration/order/index", "title" => "查看",],
+                            ["name" => "registration/order/add", "title" => "添加"],
+                            ["name" => "registration/order/edit", "title" => "编辑"],
+                            ["name" => "registration/order/del", "title" => "删除"],
+                            ["name" => "registration/order/multi", "title" => "批量更新"],
                         ]
                     ]
 
                 ]
-            ]
+            ],
+            [
+                'name'    => 'systematic',
+                'title'   => '系统管理',
+                'icon'    => 'fa fa-graduation-cap',
+                'sublist' => [
+                    [
+                        "name"    => "registration/slide",
+                        "title"   => "轮播管理",
+                        'icon'    => 'fa fa-map-marker',
+                        'sublist' => [
+                            ["name" => "registration/slide/index", "title" => "查看",],
+                            ["name" => "registration/slide/add", "title" => "添加"],
+                            ["name" => "registration/slide/edit", "title" => "编辑"],
+                            ["name" => "registration/slide/del", "title" => "删除"],
+                            ["name" => "registration/slide/multi", "title" => "批量更新"],
+                        ]
+                    ],
+                    [
+                        "name"    => "registration/article",
+                        "title"   => "内容管理",
+                        'icon'    => 'fa fa-photo',
+                        'sublist' => [
+                            ["name" => "registration/article/index", "title" => "查看",],
+                            ["name" => "registration/article/add", "title" => "添加"],
+                            ["name" => "registration/article/edit", "title" => "编辑"],
+                            ["name" => "registration/article/del", "title" => "删除"],
+                            ["name" => "registration/article/multi", "title" => "批量更新"],
+                        ]
+                    ],
+                    ]
+            ],
         ];
         Menu::create($menu);
         return true;
@@ -133,6 +176,16 @@ class Registration extends Addons
     public function disable()
     {
         Menu::disable("registration");
+        return true;
+    }
+    /**
+     * 插件升级方法
+     * @return bool
+     */
+    public function upgrade()
+    {
+        //如果菜单有变更则升级菜单
+        Menu::upgrade('registration', $this->menu);
         return true;
     }
 

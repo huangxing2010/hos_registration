@@ -59,6 +59,6 @@ class Doctor extends Model
 
     public function department()
     {
-        return $this->belongsTo('app\admin\model\registration\Department', 'id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('app\admin\model\registration\Department', 'did', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }

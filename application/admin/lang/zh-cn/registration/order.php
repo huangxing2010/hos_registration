@@ -1,0 +1,32 @@
+<?php
+
+return [
+    'Id'                 => '订单id',
+    'Order_num'          => '订单号',
+    'User_id'            => '用户id',
+    'Doctor_id'          => '医生id',
+    'Duty_id'            => '排班id',
+    'Number_id'          => '号源id',
+    'Price'              => '价格',
+    'Createtime'         => '创建时间',
+    'Updatetime'         => '付款时间',
+    'Publishtime'        => '发布时间',
+    'Deletetime'         => '删除时间',
+    'Memo'               => '备注',
+    'State'              => '0默认,-1未支付,1已付款,2待就诊,3',
+    'User.username'      => '用户名',
+    'Doctor.name'        => '姓名',
+    'Duty.dutydate'      => '上班日期',
+    'Duty.range'         => '区间值',
+    'Duty.range 0'       => '未选择',
+    'Duty.range 1'       => '上午',
+    'Duty.range 2'       => '下午',
+    'Duty.range 3'       => '夜间',
+    'Number.start'       => '开始时间',
+    'Number.finish'      => '结束时间',
+    'Number.dutyrange'   => '区间值',
+    'Number.dutyrange 0' => '未选择',
+    'Number.dutyrange 1' => '上午',
+    'Number.dutyrange 2' => '下午',
+    'Number.dutyrange 3' => '夜间'
+];

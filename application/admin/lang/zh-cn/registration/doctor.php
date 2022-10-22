@@ -2,7 +2,7 @@
 
 return [
     'Id'              => 'ID',
-    'Did'             => '门诊ID',
+    'Did'             => '门诊科室',
     'Name'            => '姓名',
     'Content'         => '个人简介',
     'Image'           => '缩略图',
@@ -12,5 +12,5 @@ return [
     'Updatetime'      => '更新时间',
     'Publishtime'     => '发布时间',
     'Deletetime'      => '删除时间',
-    'Department.name' => '部门名称'
+    'Department.name' => '所在科室'
 ];

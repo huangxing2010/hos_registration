@@ -3,6 +3,7 @@
 namespace app\admin\controller\registration;
 
 use app\common\controller\Backend;
+use fast\Tree;
 
 /**
  * 医生管理
@@ -22,6 +23,19 @@ class Doctor extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Doctor;
+        $deparModel = new \app\admin\model\Department;
+
+        $tree = Tree::instance();
+        $tree->init(collection($deparModel->order('id desc')->select())->toArray(), 'pid');
+        $this->categorylist = $tree->getTreeList($tree->getTreeArray(0), 'name');
+        $categorydata = [0 => ['id' => '0', 'name' => __('None')]];
+        foreach ($this->categorylist as $k => $v) {
+            $categorydata[$v['id']] = $v;
+        }
+
+        $this->view->assign("parentList", $categorydata);
+
+
         $this->view->assign("statusList", $this->model->getStatusList());
     }
 

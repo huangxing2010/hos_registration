@@ -19,6 +19,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
             // 初始化表格
             table.bootstrapTable({
+                escape: false,   //避免nbsp;不能显示空格
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
                 sortName: 'weigh',
@@ -28,8 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'pid', title: __('Pid')},
-                        {field: 'name', title: __('Name'), operate: 'LIKE'},
+                        {field: 'name', title: __('Name'), operate: 'LIKE', align:'left'},
                         {field: 'image', title: __('Image'), operate: false, events: Table.api.events.image, formatter: Table.api.formatter.image},
                         {field: 'weigh', title: __('Weigh'), operate: false},
                         {field: 'memo', title: __('Memo'), operate: 'LIKE'},
